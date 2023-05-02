@@ -41,12 +41,12 @@ dataFrame_2 <- lDataFrames[[2]] %>%
          days = factor(days, levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")),
          Uke = as.factor(Uke))
   
-#hits per participant
+# hits per participant
 dataFrame_1 <- lDataFrames[[3]] %>% 
   as_tibble()
 nrow(dataFrame_2)/dataFrame_1$sum
 
-# chart showing hits every day and time of day
+# chart showing day and time of hits
 dataFrame_2 %>% 
   ggplot(aes(time, color = week)) +
   geom_freqpoly(binwidth = 1) +
